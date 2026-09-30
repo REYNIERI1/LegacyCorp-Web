@@ -1110,3 +1110,236 @@ textarea {
     opacity: 1;
     transform: translateY(0);
 }
+
+
+/* ============================================================
+   LEGACYCORP - SELECTOR DE TEMA
+   ============================================================ */
+
+.theme-switcher {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px;
+    background: #f1f5f9;
+    border: 1px solid #dbe3ee;
+    border-radius: 12px;
+}
+
+.theme-btn {
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 16px;
+
+    transition:
+        background .25s ease,
+        transform .2s ease,
+        box-shadow .25s ease;
+}
+
+.theme-btn:hover {
+    transform: translateY(-2px);
+    background: #ffffff;
+}
+
+.theme-btn.active {
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, .15);
+}
+
+
+/* ============================================================
+   TEMA CLARO
+   ============================================================ */
+
+html[data-theme="light"] {
+    color-scheme: light;
+}
+
+html[data-theme="light"] body {
+    background: #ffffff;
+    color: #0f172a;
+}
+
+
+/* ============================================================
+   TEMA GRIS
+   ============================================================ */
+
+html[data-theme="gray"] {
+    color-scheme: light;
+}
+
+html[data-theme="gray"] body {
+    background: #e9edf2;
+    color: #1e293b;
+}
+
+html[data-theme="gray"] .header {
+    background: #dfe4ea;
+}
+
+html[data-theme="gray"] .hero {
+    background:
+        linear-gradient(
+            135deg,
+            #f4f6f8 0%,
+            #dfe5eb 100%
+        );
+}
+
+html[data-theme="gray"] .theme-switcher {
+    background: #cfd6de;
+    border-color: #bac4cf;
+}
+
+
+/* ============================================================
+   TEMA OSCURO
+   ============================================================ */
+
+html[data-theme="dark"] {
+    color-scheme: dark;
+}
+
+html[data-theme="dark"] body {
+    background: #080d16;
+    color: #e5e7eb;
+}
+
+html[data-theme="dark"] .header {
+    background: #0b1220;
+    border-bottom-color: #1e293b;
+}
+
+html[data-theme="dark"] .nav-menu a {
+    color: #cbd5e1;
+}
+
+html[data-theme="dark"] .nav-menu a:hover {
+    color: #3b82f6;
+}
+
+html[data-theme="dark"] .brand-name {
+    color: #ffffff;
+}
+
+html[data-theme="dark"] .brand-tagline {
+    color: #94a3b8;
+}
+
+html[data-theme="dark"] .hero {
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(37, 99, 235, .18),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #080d16 0%,
+            #0f172a 100%
+        );
+}
+
+html[data-theme="dark"] .hero h1 {
+    color: #f8fafc;
+}
+
+html[data-theme="dark"] .hero p {
+    color: #94a3b8;
+}
+
+html[data-theme="dark"] .theme-switcher {
+    background: #111827;
+    border-color: #334155;
+}
+
+html[data-theme="dark"] .theme-btn {
+    color: #f8fafc;
+}
+
+html[data-theme="dark"] .theme-btn:hover {
+    background: #1e293b;
+}
+
+html[data-theme="dark"] .theme-btn.active {
+    background: #2563eb;
+    box-shadow: 0 3px 12px rgba(37, 99, 235, .35);
+}
+
+
+/* ============================================================
+   TRANSICION SUAVE ENTRE TEMAS
+   ============================================================ */
+
+body,
+.header,
+.hero,
+.nav-menu a,
+.theme-switcher,
+.theme-btn {
+    transition:
+        background-color .35s ease,
+        background .35s ease,
+        color .35s ease,
+        border-color .35s ease;
+}
+
+/* ============================================================
+   AJUSTE HEADER - SELECTOR DE TEMA + BOTON
+   ============================================================ */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.theme-switcher {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding: 3px;
+    border-radius: 10px;
+}
+
+.theme-btn {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    font-size: 14px;
+}
+
+/* Evita que el botón de evaluación salte de línea */
+.btn-header {
+    white-space: nowrap;
+}
+
+/* ============================================================
+   BOTÓN "VER SERVICIOS" - MODO OSCURO
+   ============================================================ */
+
+html[data-theme="dark"] .btn-secondary {
+    background: #111827;
+    color: #e5e7eb;
+    border: 1px solid #334155;
+    box-shadow: none;
+}
+
+html[data-theme="dark"] .btn-secondary:hover {
+    background: #1e293b;
+    color: #ffffff;
+    border-color: #2563eb;
+    transform: translateY(-2px);
+}

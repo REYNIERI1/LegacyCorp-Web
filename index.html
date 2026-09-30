@@ -43,10 +43,43 @@
             <a href="#contacto">Contacto</a>
         </nav>
 
-        <a href="#"
-   class="btn btn-header evaluation-link">
-    Solicitar evaluación
-</a>
+       <div class="header-actions">
+
+    <!-- SELECTOR DE TEMA -->
+    <div class="theme-switcher" aria-label="Seleccionar tema">
+
+        <button type="button"
+                class="theme-btn active"
+                data-theme="light"
+                title="Tema claro"
+                aria-label="Activar tema claro">
+            ☀️
+        </button>
+
+        <button type="button"
+                class="theme-btn"
+                data-theme="gray"
+                title="Tema gris"
+                aria-label="Activar tema gris">
+            ◐
+        </button>
+
+        <button type="button"
+                class="theme-btn"
+                data-theme="dark"
+                title="Tema oscuro"
+                aria-label="Activar tema oscuro">
+            🌙
+        </button>
+
+    </div>
+
+    <a href="#"
+       class="btn btn-header evaluation-link">
+        Solicitar evaluación
+    </a>
+
+</div>
 
         <button class="menu-toggle"
                 id="menuToggle"

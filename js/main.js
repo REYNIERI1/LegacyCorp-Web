@@ -222,3 +222,67 @@ function abrirFormularioEvaluacion() {
 // ======================================================
 // FIN MAIN.JS
 // ======================================================
+// ============================================================
+// LEGACYCORP - SELECTOR DE TEMA
+// ============================================================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const themeButtons = document.querySelectorAll(".theme-btn");
+
+    // Recuperar tema guardado.
+    // Si nunca se ha seleccionado uno, usamos el tema claro.
+    const savedTheme = localStorage.getItem("legacycorp-theme") || "light";
+
+    // Aplicar tema al cargar la página
+    applyTheme(savedTheme);
+
+    // Detectar clic en los botones
+    themeButtons.forEach((button) => {
+
+        button.addEventListener("click", () => {
+
+            const selectedTheme = button.dataset.theme;
+
+            applyTheme(selectedTheme);
+
+            // Guardar preferencia
+            localStorage.setItem(
+                "legacycorp-theme",
+                selectedTheme
+            );
+
+        });
+
+    });
+
+
+    // ========================================================
+    // FUNCIÓN PARA CAMBIAR EL TEMA
+    // ========================================================
+
+    function applyTheme(theme) {
+
+        document.documentElement.setAttribute(
+            "data-theme",
+            theme
+        );
+
+        // Quitar estado activo de todos los botones
+        themeButtons.forEach((button) => {
+            button.classList.remove("active");
+        });
+
+        // Marcar el botón correspondiente
+        const activeButton =
+            document.querySelector(
+                `.theme-btn[data-theme="${theme}"]`
+            );
+
+        if (activeButton) {
+            activeButton.classList.add("active");
+        }
+
+    }
+
+});
